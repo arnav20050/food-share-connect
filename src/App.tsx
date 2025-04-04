@@ -15,6 +15,11 @@ import RequestFoodPage from "./pages/RequestFoodPage";
 import ProfilePage from "./pages/ProfilePage";
 import MessagesPage from "./pages/MessagesPage";
 import NotFound from "./pages/NotFound";
+import AboutPage from "./pages/AboutPage";
+import HowItWorksPage from "./pages/HowItWorksPage";
+import TermsPage from "./pages/TermsPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import FindFoodPage from "./pages/FindFoodPage";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +38,11 @@ const App = () => (
           <Route path="/request-food" element={<RequestFoodPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/messages" element={<MessagesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/find-food" element={<FindFoodPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
