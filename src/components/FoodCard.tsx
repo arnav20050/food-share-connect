@@ -109,13 +109,13 @@ const FoodCard: React.FC<FoodCardProps> = ({
       
       <CardFooter className="pt-0">
         {type === 'donation' ? (
-          <Link to={`/request-food/${id}`} className="w-full">
+          <Link to={`/donation/${id}`} className="w-full">
             <Button className="w-full bg-food-green-500 hover:bg-food-green-600">
               Request This
             </Button>
           </Link>
         ) : (
-          <Link to={`/donation/${id}`} className="w-full">
+          <Link to={`/request/${id}`} className="w-full">
             <Button className="w-full bg-food-orange-500 hover:bg-food-orange-600">
               View Details
             </Button>

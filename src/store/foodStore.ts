@@ -25,6 +25,7 @@ interface FoodStore {
   addDonation: (donation: Omit<FoodDonation, 'id' | 'createdAt'>) => void;
   markNotificationAsRead: (id: string) => void;
   hasNewNotifications: boolean;
+  claimDonation: (id: string) => void;
 }
 
 export const useFoodStore = create<FoodStore>((set) => ({
@@ -151,4 +152,13 @@ export const useFoodStore = create<FoodStore>((set) => ({
       hasNewNotifications: state.notifications.length > 1 // Still has notifications after removing this one
     }));
   },
+  claimDonation: (id) => {
+    set((state) => ({
+      donations: state.donations.map(donation => 
+        donation.id === id 
+          ? { ...donation, status: 'pending' as const } 
+          : donation
+      )
+    }));
+  }
 }));

@@ -20,6 +20,7 @@ import HowItWorksPage from "./pages/HowItWorksPage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import FindFoodPage from "./pages/FindFoodPage";
+import DonationDetailPage from "./pages/DonationDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/find-food" element={<FindFoodPage />} />
+          <Route path="/donation/:id" element={<DonationDetailPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
