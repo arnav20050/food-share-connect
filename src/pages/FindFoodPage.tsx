@@ -99,15 +99,15 @@ const FindFoodPage: React.FC = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Distance
                 </label>
-                <Select defaultValue="5">
+                <Select defaultValue="5km">
                   <SelectTrigger>
                     <SelectValue placeholder="Select distance" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1">Within 1 km</SelectItem>
-                    <SelectItem value="5">Within 5 km</SelectItem>
-                    <SelectItem value="10">Within 10 km</SelectItem>
-                    <SelectItem value="25">Within 25 km</SelectItem>
+                    <SelectItem value="1km">Within 1 km</SelectItem>
+                    <SelectItem value="5km">Within 5 km</SelectItem>
+                    <SelectItem value="10km">Within 10 km</SelectItem>
+                    <SelectItem value="25km">Within 25 km</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -116,12 +116,12 @@ const FindFoodPage: React.FC = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Food Type
                 </label>
-                <Select defaultValue="all">
+                <Select defaultValue="all_types">
                   <SelectTrigger>
                     <SelectValue placeholder="Select food type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Types</SelectItem>
+                    <SelectItem value="all_types">All Types</SelectItem>
                     <SelectItem value="vegetables">Vegetables & Fruits</SelectItem>
                     <SelectItem value="dairy">Dairy Products</SelectItem>
                     <SelectItem value="bakery">Bakery Items</SelectItem>
