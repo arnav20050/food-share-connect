@@ -13,6 +13,7 @@ import Dashboard from "./pages/Dashboard";
 import DonateFoodPage from "./pages/DonateFoodPage";
 import RequestFoodPage from "./pages/RequestFoodPage";
 import ProfilePage from "./pages/ProfilePage";
+import MessagesPage from "./pages/MessagesPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/donate-food" element={<DonateFoodPage />} />
           <Route path="/request-food" element={<RequestFoodPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/messages" element={<MessagesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
