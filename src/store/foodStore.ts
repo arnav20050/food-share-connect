@@ -16,6 +16,7 @@ export interface FoodDonation {
   type: 'donation' | 'request';
   status: 'available' | 'pending' | 'claimed' | 'completed';
   createdAt: Date;
+  foodType?: string;
 }
 
 interface FoodStore {
@@ -39,9 +40,10 @@ export const useFoodStore = create<FoodStore>((set) => ({
       availableTime: '14:00-17:00',
       distance: '1.2 miles',
       donorName: 'Sarah J.',
-      type: 'donation' as const,
-      status: 'available' as const,
-      createdAt: new Date('2025-04-04T10:30:00')
+      type: 'donation',
+      status: 'available',
+      createdAt: new Date('2025-04-04T10:30:00'),
+      foodType: 'vegetables'
     },
     {
       id: '2',
@@ -54,9 +56,10 @@ export const useFoodStore = create<FoodStore>((set) => ({
       availableTime: '18:00-20:00',
       distance: '0.8 miles',
       donorName: 'Mark R.',
-      type: 'donation' as const,
-      status: 'available' as const,
-      createdAt: new Date('2025-04-04T09:15:00')
+      type: 'donation',
+      status: 'available',
+      createdAt: new Date('2025-04-04T09:15:00'),
+      foodType: 'bakery'
     },
     {
       id: '3',
@@ -69,9 +72,10 @@ export const useFoodStore = create<FoodStore>((set) => ({
       availableTime: '10:00-16:00',
       distance: '3.1 miles',
       donorName: 'David L.',
-      type: 'donation' as const,
-      status: 'available' as const,
-      createdAt: new Date('2025-04-03T16:45:00')
+      type: 'donation',
+      status: 'available',
+      createdAt: new Date('2025-04-03T16:45:00'),
+      foodType: 'canned'
     },
     {
       id: '4',
@@ -84,9 +88,10 @@ export const useFoodStore = create<FoodStore>((set) => ({
       availableTime: '09:00-12:00',
       distance: '2.5 miles',
       donorName: 'Emily K.',
-      type: 'donation' as const,
-      status: 'available' as const,
-      createdAt: new Date('2025-04-03T14:20:00')
+      type: 'donation',
+      status: 'available',
+      createdAt: new Date('2025-04-03T14:20:00'),
+      foodType: 'fruits'
     },
     {
       id: '5',
@@ -99,9 +104,10 @@ export const useFoodStore = create<FoodStore>((set) => ({
       availableTime: '17:00-19:00',
       distance: '1.7 miles',
       donorName: 'Michael T.',
-      type: 'donation' as const,
-      status: 'available' as const,
-      createdAt: new Date('2025-04-02T18:10:00')
+      type: 'donation',
+      status: 'available',
+      createdAt: new Date('2025-04-02T18:10:00'),
+      foodType: 'prepared'
     },
     {
       id: '6',
@@ -114,9 +120,10 @@ export const useFoodStore = create<FoodStore>((set) => ({
       availableTime: '12:00-15:00',
       distance: '0.6 miles',
       donorName: 'Lisa M.',
-      type: 'donation' as const,
-      status: 'available' as const,
-      createdAt: new Date('2025-04-02T11:30:00')
+      type: 'donation',
+      status: 'available',
+      createdAt: new Date('2025-04-02T11:30:00'),
+      foodType: 'prepared'
     }
   ],
   notifications: [],
