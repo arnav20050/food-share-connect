@@ -150,7 +150,7 @@ const RequestFoodPage: React.FC = () => {
                     <SelectValue placeholder="Food Type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Types</SelectItem>
+                    <SelectItem value="all">All Types</SelectItem>
                     <SelectItem value="vegetables">Vegetables</SelectItem>
                     <SelectItem value="fruits">Fruits</SelectItem>
                     <SelectItem value="bakery">Bakery</SelectItem>
@@ -167,7 +167,7 @@ const RequestFoodPage: React.FC = () => {
                     <SelectValue placeholder="Max Distance" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Any Distance</SelectItem>
+                    <SelectItem value="any">Any Distance</SelectItem>
                     <SelectItem value="1">Within 1 mile</SelectItem>
                     <SelectItem value="2">Within 2 miles</SelectItem>
                     <SelectItem value="5">Within 5 miles</SelectItem>
