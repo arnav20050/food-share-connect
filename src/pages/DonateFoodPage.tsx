@@ -26,6 +26,7 @@ import { useToast } from '@/components/ui/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ArrowLeft } from 'lucide-react';
+import { useFoodStore } from '@/store/foodStore';
 
 // Define the form schema using Zod
 const formSchema = z.object({
@@ -60,6 +61,7 @@ const DonateFoodPage: React.FC = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const addDonation = useFoodStore(state => state.addDonation);
 
   // Initialize the form
   const form = useForm<FormData>({
@@ -93,22 +95,32 @@ const DonateFoodPage: React.FC = () => {
   const onSubmit = (data: FormData) => {
     setIsLoading(true);
     
-    // Simulate API call with setTimeout
-    setTimeout(() => {
-      console.log('Donation data:', data);
-      
-      // Show success toast
-      toast({
-        title: 'Donation Posted Successfully!',
-        description: 'Your food donation has been listed.',
-        variant: 'default',
-      });
-      
-      setIsLoading(false);
-      
-      // Navigate to dashboard after successful submission
-      navigate('/dashboard');
-    }, 1500);
+    // Add the donation to our store
+    addDonation({
+      title: data.title,
+      description: data.description,
+      imageUrl: selectedImage || 'https://images.unsplash.com/photo-1590779033100-9f60a05a013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+      quantity: data.quantity,
+      expiryDate: data.expiryDate,
+      availableDate: data.availableDate,
+      availableTime: data.availableTime,
+      donorName: 'Current User',
+      type: 'donation',
+      status: 'available',
+      distance: '0.5 miles' // Placeholder distance
+    });
+    
+    // Show success toast
+    toast({
+      title: 'Donation Posted Successfully!',
+      description: 'Your food donation has been listed.',
+      variant: 'default',
+    });
+    
+    setIsLoading(false);
+    
+    // Navigate to dashboard after successful submission
+    navigate('/dashboard');
   };
 
   return (
